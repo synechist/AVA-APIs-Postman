@@ -22,7 +22,7 @@ It is not necessary to download this repo. If you use Postman, you may simply cl
 &nbsp;&nbsp;&nbsp;&nbsp;[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/269348fb38988ffa4d2f)
 
 
-- EVM (C-Chain( API:
+- EVM (C-Chain) API:
 
 &nbsp;&nbsp;&nbsp;&nbsp;[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/269348fb38988ffa4d2f)
 
