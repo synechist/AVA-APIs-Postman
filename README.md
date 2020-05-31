@@ -1,4 +1,4 @@
-# AVA-APIs-Postman
+# AVA APIs: Postman collections
 This repository contains intermittent pushes of Postman Collections for the AVA APIs. 
 
 I have noticed many users struggling with 
@@ -15,13 +15,13 @@ This repo contains Postman collections for the Ava JSON-RPC APIs.
 
 It is not necessary to download this repo. If you use Postman, you may simply click on any of the following links to add the collections to your library:
 
--  [![Admin API](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8dd8f41bc190fd42607e)
+- Admin API [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8dd8f41bc190fd42607e)
 
-- AVM (X-Chain) API: https://www.getpostman.com/collections/8cf12f11e821bbbf7e3c
+- AVM (X-Chain) API: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/269348fb38988ffa4d2f)
 
-- Keystore API: https://www.getpostman.com/collections/d82c54eebe28afb54927
+- Keystore API: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/d82c54eebe28afb54927)
 
-- Platform (P-Chain) API: https://www.getpostman.com/collections/35c691dc2fc821d7f1a5
+- Platform (P-Chain) API: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/35c691dc2fc821d7f1a5)
 
 
 Note that these are static links and so will not be updated as the collections are improved. To get updates, watch this repo.
