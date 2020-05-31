@@ -2,8 +2,11 @@
 This repository contains intermittent pushes of Postman Collections for the AVA APIs. 
 
 I have noticed many users struggling with 
+
 (a) inputting correct unix timestamps to API calls (on Mac especially, but also on Ubuntu), and 
+
 (b) incrementing payerNonce. 
+
 This Postman collection automates these data, in addition to reducing the chance of formatting calls incorrectly, and in general greatly easing the workload for interacting with AVA.
 
 
@@ -12,7 +15,7 @@ This repo contains Postman collections for the Ava JSON-RPC APIs.
 
 It is not necessary to download this repo. If you use Postman, you may simply click on any of the following links to add the collections to your library:
 
-- Admin API: https://www.getpostman.com/collections/8dd8f41bc190fd42607e
+-  [![Admin API](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8dd8f41bc190fd42607e)
 
 - AVM (X-Chain) API: https://www.getpostman.com/collections/8cf12f11e821bbbf7e3c
 
