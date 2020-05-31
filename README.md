@@ -12,21 +12,21 @@ The following Postman collections automate these, in addition to reducing the ch
 
 It is not necessary to download this repo. If you use Postman, you may simply click on any of the following links to add the collections to your library:
 
-- Admin API					[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8dd8f41bc190fd42607e)
+- Admin API                 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8dd8f41bc190fd42607e)
 
-- AVM (X-Chain) API:		[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/269348fb38988ffa4d2f)
+- AVM (X-Chain) API:        [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/269348fb38988ffa4d2f)
 
-- EVM (C-Chain( API: 		[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/269348fb38988ffa4d2f)
+- EVM (C-Chain( API:        [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/269348fb38988ffa4d2f)
 
-- IPC API: 					[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8a4f6ad5cfd004175d71)
+- IPC API:                  [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8a4f6ad5cfd004175d71)
 
-- Keystore API:				[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/d82c54eebe28afb54927)
+- Keystore API:             [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/d82c54eebe28afb54927)
 
-- Metrics API:				[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/25b6eed477b652661a0c)
+- Metrics API:              [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/25b6eed477b652661a0c)
 
-- Platform (P-Chain) API:	[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/35c691dc2fc821d7f1a5)
+- Platform (P-Chain) API:   [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/35c691dc2fc821d7f1a5)
 
-- Timestamp API:			[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/0b79452b337de89a4c16)
+- Timestamp API:            [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/0b79452b337de89a4c16)
 
 
 **Note:** these are static links and so will not automatically update as the collections are improved. To get updates, watch this repo: I will replace the links with fresh ones when collections are enhanced.
