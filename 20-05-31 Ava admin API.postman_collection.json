@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "d8d52467-21c8-44af-bdf4-988cf5e61b04",
+		"name": "Ava admin API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "admin.getNodeId",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"admin.getNodeID\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/admin",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin.peers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"admin.peers\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/admin",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin.getNetworkId",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"admin.getNetworkID\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/admin",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin.alias",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"admin.alias\",\r\n    \"params\": {\r\n        \"alias\":\"myAlias\",\r\n        \"endpoint\":\"bc/x\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/admin",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin.aliasChain",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"admin.aliasChain\",\r\n    \"params\": {\r\n        \"chain\":\"{{blockchainId}}\",\r\n        \"alias\":\"P-chain\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/admin",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin.getBlockchainId",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"admin.getBlockchainID\",\r\n    \"params\": {\r\n        \"alias\":\"{{chainAlias}}\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/admin",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin.startCPUProfiler",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"admin.startCPUProfiler\",\r\n    \"params\" :{\r\n        \"fileName\":\"cpu.profile\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/admin",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin.stopCPUProfiler",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"admin.stopCPUProfiler\"\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/admin",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin.memoryProfile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"admin.memoryProfile\",\r\n    \"params\" :{\r\n        \"fileName\":\"mem.profile\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/admin",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin.lockProfile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"admin.lockProfile\",\r\n    \"params\" :{\r\n        \"fileName\":\"lock.profile\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/admin",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9328c3ba-a48e-481a-8e1f-42566e754e85",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "18d03852-33a2-4792-9dfe-e7d6ae8cb89d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

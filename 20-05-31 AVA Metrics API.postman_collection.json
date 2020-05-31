@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "e38b65c6-fc69-4cb1-89aa-c39fc8d2528a",
+		"name": "AVA Metrics API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Metrics",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:9650/ext/metrics",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"metrics"
+					]
+				},
+				"description": "This API produces Prometheus compatible metrics. See here for information on Prometheus’ formatting: https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

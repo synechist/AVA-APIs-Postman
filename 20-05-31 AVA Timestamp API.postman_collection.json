@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "9c03123b-fcfd-40dc-9ecf-f07cfb854b4b",
+		"name": "AVA Timestamp API",
+		"description": "This API allows clients to interact with the Timestamp Chain.\r\nThe Timestamp Chain is a timestamp server. Each block contains a 32 byte payload and the timestamp when the block was created.\r\nThe genesis data for a new instance of the Timestamp Chain is the genesis block’s 32 byte payload.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "timestamp.getBlock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"timestamp.getBlock\",\r\n    \"params\":{\r\n        \"id\":\"{{blockId}}\"\r\n    },\r\n    \"id\": 1\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/bc/timestamp",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"bc",
+						"timestamp"
+					]
+				},
+				"description": "If blockId is left blank, the latest block s returned."
+			},
+			"response": []
+		},
+		{
+			"name": "timestamp.proposeBlock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"timestamp.proposeBlock\",\r\n    \"params\":{\r\n        \"data\":\"SkB92YpWm4Q2iPnLGCuDPZPgUQMxajqQQuz91oi3xD984f8r\"\r\n    },\r\n    \"id\": 1\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/bc/timestamp",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"bc",
+						"timestamp"
+					]
+				},
+				"description": "data is the base 58 (with checksum) representation of the proposed block’s 32 byte payload."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

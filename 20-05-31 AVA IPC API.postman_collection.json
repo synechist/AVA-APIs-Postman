@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "6263976a-51df-482b-b96d-32c15912c5cc",
+		"name": "AVA IPC API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ipcs.publishBlockchain",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ipcs.publishBlockchain\",\r\n    \"params\":{\r\n        \"blockchainID\":\"{{blockchainId}}\"\r\n    },\r\n    \"id\": 1\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/ipcs",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"ipcs"
+					]
+				},
+				"description": "A node will only expose this API if it is started with command-line argument api-ipcs-enabled=true. "
+			},
+			"response": []
+		},
+		{
+			"name": "ipcs.unPublishBlockchain",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"ipcs.unpublishBlockchain\",\r\n    \"params\":{\r\n        \"blockchainID\":\"{{blockchainId}}\"\r\n    },\r\n    \"id\": 1\r\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:9650/ext/ipcs",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9650",
+					"path": [
+						"ext",
+						"ipcs"
+					]
+				},
+				"description": "A node will only expose this API if it is started with command-line argument api-ipcs-enabled=true. "
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
