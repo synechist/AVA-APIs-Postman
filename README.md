@@ -1,4 +1,4 @@
-#AVA APIs: Postman collections
+# AVA APIs: Postman collections
 
 This repo contains Postman collections for all eight of the Ava JSON-RPC APIs.
 
@@ -33,7 +33,7 @@ It is not necessary to download this repo. If you use Postman, you may simply cl
 
 
 
-##How to use these collections
+## How to use these collections
 
 1) To avoid interminable editing of many calls, username and password are implemented assuming the environment variables {{username}} and {{password}} respectively. To have Postman insert your username and password wherever required, create the environment variables "username" and "password", using the "current value" field to hold your username and password.
 
