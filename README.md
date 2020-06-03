@@ -55,42 +55,42 @@ To join the AVA APIs team on Postman, [click here](https://app.getpostman.com/jo
 It is not necessary to download this repo. If you sign up to the team, these collections (and also the environment) will automatically sync over. Alternatively, if you use Postman, you may simply click on any of the following links to add the most up-to-date version of a collection to your library:
 
 
-- Admin API:
+- [Admin API](https://documenter.getpostman.com/view/1224601/SztHW53B)
 
 &nbsp;&nbsp;&nbsp;&nbsp;[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8dd8f41bc190fd42607e)
 
 
-- AVM (X-Chain) API:
+- [AVM (X-Chain) API](https://documenter.getpostman.com/view/1224601/SztHW57V)
 
 &nbsp;&nbsp;&nbsp;&nbsp;[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/269348fb38988ffa4d2f)
 
 
-- EVM (C-Chain( API:
+- [EVM (C-Chain( API](https://documenter.getpostman.com/view/1224601/SztHW57Y)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/269348fb38988ffa4d2f)
+&nbsp;&nbsp;&nbsp;&nbsp;[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3ca30db566d1f4dcdf90)
 
 
-- IPC API:
+- [IPC API](https://documenter.getpostman.com/view/1224601/SztHW57Z)
 
 &nbsp;&nbsp;&nbsp;&nbsp;[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8a4f6ad5cfd004175d71)
 
 
-- Keystore API:
+- [Keystore API](https://documenter.getpostman.com/view/1224601/SztHW57c)
 
 &nbsp;&nbsp;&nbsp;&nbsp;[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/d82c54eebe28afb54927)
 
 
-- Metrics API:
+- [Metrics API](https://documenter.getpostman.com/view/1224601/SztHW5Bu)
 
 &nbsp;&nbsp;&nbsp;&nbsp;[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/25b6eed477b652661a0c)
 
 
-- Platform (P-Chain) API:
+- [Platform (P-Chain) API](https://documenter.getpostman.com/view/1224601/SztHW5Bv)
 
 &nbsp;&nbsp;&nbsp;&nbsp;[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/35c691dc2fc821d7f1a5)
 
 
-- Timestamp API:
+- [Timestamp API](https://documenter.getpostman.com/view/1224601/SztHW5Bw)
 
 &nbsp;&nbsp;&nbsp;&nbsp;[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/0b79452b337de89a4c16)
 
