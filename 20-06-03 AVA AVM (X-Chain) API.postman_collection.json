@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "78c2c8c8-4cc8-4adb-ba5b-c024883c114f",
-		"name": "AVA X-Chain API",
+		"name": "AVA AVM (X-Chain) API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -39,6 +39,36 @@
 		},
 		{
 			"name": "avm.createAddress",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3b37ccb4-70d8-4578-936e-f76cafb8645c",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e8efe02e-5987-4e2b-aba6-9450bea37640",
+						"exec": [
+							"//access the JSON response body\r",
+							"let response = pm.response.json()\r",
+							"\r",
+							"// extract the desired data\r",
+							"let Address = response.result.address;\r",
+							"\r",
+							"//store this value as en invironment variable\r",
+							"//where \"Address\" is the key to the desired value in the response body, \"address\" is the name of our environment variable and \"Address\" is the value that we will store as this variable\r",
+							"pm.environment.set(\"address\", Address)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -105,6 +135,26 @@
 		},
 		{
 			"name": "avm.getBalance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6c4644ff-ef46-45e0-ac07-b586dac4bba3",
+						"exec": [
+							"//access the JSON response body\r",
+							"let response = pm.response.json()\r",
+							"\r",
+							"// extract the desired data\r",
+							"let Balance = response.result.balance;\r",
+							"\r",
+							"//store this value as en invironment variable\r",
+							"//where \"balance\" is the key to the desired value in the response body, \"balance\" is the name of our environment variable and \"Balance\" is the value that we will store as this variable\r",
+							"pm.environment.set(\"balance\", Balance)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -188,7 +238,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :3,\r\n    \"method\" :\"avm.getUTXOs\",\r\n    \"params\" :{\r\n        \"addresses\":\"{{address}}\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :3,\r\n    \"method\" :\"avm.getUTXOs\",\r\n    \"params\" :{\r\n        \"addresses\":[\"{{address}}\"]\r\n    }\r\n}",
 					"options": {
 						"raw": {}
 					}
@@ -285,6 +335,27 @@
 		},
 		{
 			"name": "avm.getTxStatus",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fc897093-e3a5-4a2b-b367-1513b1301dab",
+						"exec": [
+							"//access the JSON response body\r",
+							"let response = pm.response.json()\r",
+							"\r",
+							"// extract the desired data\r",
+							"let Status = response.result.status;\r",
+							"\r",
+							"//store this value as en invironment variable\r",
+							"//where \"status\" is the key to the desired value in the response body, \r",
+							"//\"txStatus\" is the name of our environment variable and \"Status\" is the value that we will store as this variable\r",
+							"pm.environment.set(\"txStatus\", Status)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -318,6 +389,26 @@
 		},
 		{
 			"name": "avm.send",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "487e2998-7ee3-4cab-b2e6-18a817e835d3",
+						"exec": [
+							"//access the JSON response body\r",
+							"let response = pm.response.json()\r",
+							"\r",
+							"// extract the desired data\r",
+							"let Txid = response.result.txID;\r",
+							"\r",
+							"//store this value as en invironment variable\r",
+							"//where \"txID\" is the key to the desired value in the response body, \"txid\" is the name of our environment variable and \"Txid\" is the value that we will store as this variable\r",
+							"pm.environment.set(\"txid\", Txid)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -483,6 +574,26 @@
 		},
 		{
 			"name": "avm.exportAVA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e6f5e59b-de1b-4be7-917d-2d7a2aca25da",
+						"exec": [
+							"//access the JSON response body\r",
+							"let response = pm.response.json()\r",
+							"\r",
+							"// extract the desired data\r",
+							"let Txid = response.result.txID;\r",
+							"\r",
+							"//store this value as en invironment variable\r",
+							"//where \"txID\" is the key to the desired value in the response body, \"txid\" is the name of our environment variable and \"Txid\" is the value that we will store as this variable\r",
+							"pm.environment.set(\"txid\", Txid)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [

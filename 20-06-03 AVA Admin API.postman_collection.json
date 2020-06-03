@@ -1,12 +1,32 @@
 {
 	"info": {
 		"_postman_id": "d8d52467-21c8-44af-bdf4-988cf5e61b04",
-		"name": "Ava admin API",
+		"name": "AVA Admin API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "admin.getNodeId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5aec877f-6b32-48ad-b781-e24766f11612",
+						"exec": [
+							"//access the JSON response body\r",
+							"let response = pm.response.json()\r",
+							"\r",
+							"// extract the desired data\r",
+							"let nodeid = response.result.nodeID;\r",
+							"\r",
+							"//store this value as en invironment variable\r",
+							"//where \"nodeID\" is the key to the desired value in the response body, \"nodeId\" (i.e. camel case) is the name of our environment variable and \"nodeid\" is the value that we will store as this variable\r",
+							"pm.environment.set(\"nodeId\", nodeid)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -71,6 +91,26 @@
 		},
 		{
 			"name": "admin.getNetworkId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7b72ab26-ed05-4e74-8d51-344a08c842ac",
+						"exec": [
+							"//access the JSON response body\r",
+							"let response = pm.response.json()\r",
+							"\r",
+							"// extract the desired data\r",
+							"let networkid = response.result.networkID;\r",
+							"\r",
+							"//store this value as en invironment variable\r",
+							"//where \"networkID\" is the key to the desired value in the response body, \"networkId\" (i.e. camel case) is the name of our environment variable and \"networkid\" is the value that we will store as this variable\r",
+							"pm.environment.set(\"networkId\", networkid)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -135,6 +175,18 @@
 		},
 		{
 			"name": "admin.aliasChain",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "17c90991-d60d-4e85-8600-ca466139b43f",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -146,7 +198,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"admin.aliasChain\",\r\n    \"params\": {\r\n        \"chain\":\"{{blockchainId}}\",\r\n        \"alias\":\"P-chain\"\r\n    }\r\n}"
+					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"admin.aliasChain\",\r\n    \"params\": {\r\n        \"chain\":\"{{blockchainId}}\",\r\n        \"alias\":\"C-chain\"\r\n    }\r\n}"
 				},
 				"url": {
 					"raw": "127.0.0.1:9650/ext/admin",
@@ -178,7 +230,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"admin.getBlockchainID\",\r\n    \"params\": {\r\n        \"alias\":\"{{chainAlias}}\"\r\n    }\r\n}"
+					"raw": "{\r\n    \"jsonrpc\":\"2.0\",\r\n    \"id\"     :1,\r\n    \"method\" :\"admin.getBlockchainID\",\r\n    \"params\": {\r\n        \"alias\":\"{{blockchainAlias}}\"\r\n    }\r\n}"
 				},
 				"url": {
 					"raw": "127.0.0.1:9650/ext/admin",

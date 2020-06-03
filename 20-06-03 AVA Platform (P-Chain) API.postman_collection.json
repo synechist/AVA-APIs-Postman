@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "9c218cd6-b2f2-4bf4-b14f-4bb04789318f",
-		"name": "Ava P-chain API",
+		"name": "AVA Platform (P-Chain) API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -172,6 +172,33 @@
 		},
 		{
 			"name": "platform.getAccount",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4bbe4758-02f5-448a-bb04-15394f12ebee",
+						"exec": [
+							"//this call does not increment payerNonce, it just retrieves it\r",
+							"//access the JSON response body\r",
+							"let response = pm.response.json()\r",
+							"\r",
+							"// extract the desired data\r",
+							"let Payernonce = response.result.nonce;\r",
+							"\r",
+							"//store this value as en invironment variable\r",
+							"//where \"nonce\" is the key to the desired value in the response body, \"payerNonce\" is the name of our environment variable and \"Payernonce\" is the value that we will store as this variable\r",
+							"pm.environment.set(\"payerNonce\", Payernonce)\r",
+							"\r",
+							"//and so for account balance\r",
+							"let response2 = pm.response.json()\r",
+							"let Amount = response.result.balance;\r",
+							"pm.environment.set(\"amount\", Amount)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -199,12 +226,41 @@
 						"bc",
 						"P"
 					]
-				}
+				},
+				"description": "Retrieves account nonce and balance."
 			},
 			"response": []
 		},
 		{
 			"name": "platform.listAccounts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "49757930-37de-4e3b-9f67-bc5e8f0ed57a",
+						"exec": [
+							"\r",
+							"//this call does not increment payerNonce, it just retrieves it\r",
+							"//access the JSON response body\r",
+							"let Response = pm.response.json()\r",
+							"\r",
+							"//Convert to string\r",
+							"let Dataobject = JSON.stringify(Response);\r",
+							"\r",
+							"//desired data is inside an array (i.e. it has no key for a set of values); extract the values for \"address\", \"nonce\", and \"balance\".\r",
+							"var Dataparse = JSON.parse(Dataobject);\r",
+							"pm.environment.set(\"account\", Dataparse.result.accounts[0].address);\r",
+							"\r",
+							"var Dataparse2 = JSON.parse(Dataobject);\r",
+							"pm.environment.set(\"payerNonce\", Dataparse2.result.accounts[0].nonce);\r",
+							"\r",
+							"var Dataparse3 = JSON.parse(Dataobject);\r",
+							"pm.environment.set(\"amount\", Dataparse3.result.accounts[0].balance);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -345,11 +401,32 @@
 					"script": {
 						"id": "64e0492a-a6d3-44d7-abdf-936dbb7c3837",
 						"exec": [
+							"let payernonce = pm.environment.get(\"payerNonce\");\r",
+							"pm.environment.set(\"payerNonce\", 1+Number(payernonce));\r",
+							"\r",
 							"var moment = require('moment')\r",
 							"\r",
 							"    pm.environment.set(\"current_timestamp\", moment().unix())\r",
-							"    pm.environment.set(\"current_timestamp_add10minutes\", moment().add(10, 'minutes').unix())\r",
-							"    pm.environment.set(\"current_timestamp_add2days\", moment().add(2, 'days').unix())"
+							"    pm.environment.set(\"validationStartTime_timestampPlusXMinutes\", moment().add(5, 'minutes').unix())\r",
+							"    pm.environment.set(\"validationEndTime_timestampPlusXDays\", moment().add(16, 'days').unix())"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "5851748f-2978-40c4-ae49-368b8c69bc49",
+						"exec": [
+							"//access the JSON response body\r",
+							"let response = pm.response.json()\r",
+							"\r",
+							"// extract the desired data\r",
+							"let Unsignedtx = response.result.unsignedTx;\r",
+							"\r",
+							"//store this value as en invironment variable\r",
+							"//where \"unsignedTx\" is the key to the desired value in the response body, \"unsignedTx\" is the name of our environment variable and \"Unsignedtx\" is the value that we will store as this variable\r",
+							"pm.environment.set(\"unsignedTx\", Unsignedtx)"
 						],
 						"type": "text/javascript"
 					}
@@ -366,7 +443,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"platform.addDefaultSubnetValidator\",\r\n    \"params\": {\r\n        \"id\":\"{{nodeId}}\",\r\n        \"payerNonce\":{{payerNonce}},\r\n        \"destination\":\"{{account}}\",\r\n        \"startTime\":{{current_timestamp_add10minutes}},\r\n        \"endTime\":{{current_timestamp_add2days}},\r\n        \"stakeAmount\":{{amount}}\r\n    },\r\n    \"id\": 1\r\n}"
+					"raw": "{\r\n    \"jsonrpc\": \"2.0\",\r\n    \"method\": \"platform.addDefaultSubnetValidator\",\r\n    \"params\": {\r\n        \"id\":\"{{nodeId}}\",\r\n        \"payerNonce\":{{payerNonce}},\r\n        \"destination\":\"{{account}}\",\r\n        \"startTime\":{{validationStartTime_timestampPlusXMinutes}},\r\n        \"endTime\":{{validationEndTime_timestampPlusXDays}},\r\n        \"stakeAmount\":{{amount}}\r\n    },\r\n    \"id\": 1\r\n}",
+					"options": {
+						"raw": {}
+					}
 				},
 				"url": {
 					"raw": "127.0.0.1:9650/ext/P",
@@ -401,6 +481,24 @@
 							"\r",
 							"let payernonce = pm.environment.get(\"payerNonce\");\r",
 							"pm.environment.set(\"payerNonce\", 1+Number(payernonce));"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "7682138b-eee4-47a7-a807-4c9064836615",
+						"exec": [
+							"//access the JSON response body\r",
+							"let response = pm.response.json()\r",
+							"\r",
+							"// extract the desired data\r",
+							"let Unsignedtx = response.result.unsignedTx;\r",
+							"\r",
+							"//store this value as en invironment variable\r",
+							"//where \"unsignedTx\" is the key to the desired value in the response body, \"unsignedTx\" is the name of our environment variable and \"Unsignedtx\" is the value that we will store as this variable\r",
+							"pm.environment.set(\"unsignedTx\", Unsignedtx)"
 						],
 						"type": "text/javascript"
 					}
@@ -680,6 +778,24 @@
 						],
 						"type": "text/javascript"
 					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e953fb49-cb05-4184-aed2-0878139eb94f",
+						"exec": [
+							"//access the JSON response body\r",
+							"let response = pm.response.json()\r",
+							"\r",
+							"// extract the desired data\r",
+							"let Unsignedtx = response.result.unsignedTx;\r",
+							"\r",
+							"//store this value as en invironment variable\r",
+							"//where \"unsignedTx\" is the key to the desired value in the response body, \"unsignedTx\" is the name of our environment variable and \"Unsignedtx\" is the value that we will store as this variable\r",
+							"pm.environment.set(\"unsignedTx\", Unsignedtx)"
+						],
+						"type": "text/javascript"
+					}
 				}
 			],
 			"request": {
@@ -715,6 +831,37 @@
 		},
 		{
 			"name": "platform.importAVA",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ec4ccc6e-a82f-4fbc-83e1-542418cab39e",
+						"exec": [
+							"let payernonce = pm.environment.get(\"payerNonce\");\r",
+							"pm.environment.set(\"payerNonce\", 1+Number(payernonce));"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "bdbb21fe-2106-46e1-a8fb-b229a1a2250c",
+						"exec": [
+							"//access the JSON response body\r",
+							"let response = pm.response.json()\r",
+							"\r",
+							"// extract the desired data\r",
+							"let Tx = response.result.tx;\r",
+							"\r",
+							"//store this value as en invironment variable\r",
+							"//where \"tx\" is the key to the desired value in the response body, \"tx\" is the name of our environment variable and \"Tx\" is the value that we will store as this variable\r",
+							"pm.environment.set(\"tx\", Tx)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -748,6 +895,26 @@
 		},
 		{
 			"name": "platform.sign",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fd8de568-6c45-49bb-aa43-f8b405023ab6",
+						"exec": [
+							"//access the JSON response body\r",
+							"let response = pm.response.json()\r",
+							"\r",
+							"// extract the desired data\r",
+							"let Tx = response.result.tx;\r",
+							"\r",
+							"//store this value as en invironment variable\r",
+							"//where \"Tx\" is the key to the desired value in the response body, \"tx\" is the name of our environment variable and \"Tx\" is the value that we will store as this variable\r",
+							"pm.environment.set(\"tx\", Tx)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -759,7 +926,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.sign\",\n    \"params\": {\n        \"tx\":\"{{tx}}\",\n        \"signer\":\"{{account}}\",\n        \"username\":\"{{username}}\",\n        \"password\":\"{{password}}\"\n    },\n    \"id\": 2\n}"
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.sign\",\n    \"params\": {\n        \"tx\":\"{{unsignedTx}}\",\n        \"signer\":\"{{account}}\",\n        \"username\":\"{{username}}\",\n        \"password\":\"{{password}}\"\n    },\n    \"id\": 2\n}",
+					"options": {
+						"raw": {}
+					}
 				},
 				"url": {
 					"raw": "127.0.0.1:9650/ext/P",
@@ -780,6 +950,26 @@
 		},
 		{
 			"name": "platform.issueTx",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f25c2853-4d26-4121-8abd-0cfca92a15a1",
+						"exec": [
+							"//access the JSON response body\r",
+							"let response = pm.response.json()\r",
+							"\r",
+							"// extract the desired data\r",
+							"let Txid = response.result.txID;\r",
+							"\r",
+							"//store this value as en invironment variable\r",
+							"//where \"Tx\" is the key to the desired value in the response body, \"tx\" is the name of our environment variable and \"Tx\" is the value that we will store as this variable\r",
+							"pm.environment.set(\"txid\", Txid)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -805,38 +995,6 @@
 					"path": [
 						"ext",
 						"bc",
-						"P"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "platform.issueTx",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"platform.issueTx\",\n    \"params\": {\n        \"tx\":\"{{tx}}\"\n    },\n    \"id\": 3\n}"
-				},
-				"url": {
-					"raw": "127.0.0.1:9650/ext/P",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "9650",
-					"path": [
-						"ext",
 						"P"
 					]
 				}

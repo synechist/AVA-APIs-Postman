@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "cad6110d-bd1d-4e65-9946-6e54e185d0a7",
-		"name": "AVA EVM API",
+		"_postman_id": "7acb30cc-ebe4-4ca5-9899-e7873dd2e837",
+		"name": "AVA EVM (-C-Chain) API",
 		"description": "A collection holding all the Ava EVM JSON RPC API calls\r\nDocumentation at https://geth.ethereum.org/docs/rpc/server",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1837,7 +1837,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "073e81b3-ed02-4686-9120-d1c9ba3a345a",
+				"id": "77b5b1ec-e5e5-41f9-a1a4-0210f7ce85d2",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1847,7 +1847,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "3ea1bcd5-672c-4a63-8a02-ee985fd90573",
+				"id": "3bd0bda5-0ee9-4020-a3ba-1fb238b86be7",
 				"type": "text/javascript",
 				"exec": [
 					""
