@@ -77,7 +77,7 @@ It is not necessary to download this repo. If you sign up to the team, these col
 
 - [Keystore API](https://documenter.getpostman.com/view/1224601/SztHW57c)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/d82c54eebe28afb54927)
+&nbsp;&nbsp;&nbsp;&nbsp;[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/05bfbb7ca2779b3239db)
 
 
 - [Metrics API](https://documenter.getpostman.com/view/1224601/SztHW5Bu)
