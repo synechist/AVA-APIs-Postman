@@ -62,7 +62,7 @@ It is not necessary to download this repo. If you sign up to the team, these col
 
 - [AVM (X-Chain) API](https://documenter.getpostman.com/view/1224601/SztHW57V)
 
-&nbsp;&nbsp;&nbsp;&nbsp;[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/269348fb38988ffa4d2f)
+&nbsp;&nbsp;&nbsp;&nbsp;[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8cf12f11e821bbbf7e3c)
 
 
 - [EVM (C-Chain( API](https://documenter.getpostman.com/view/1224601/SztHW57Y)
